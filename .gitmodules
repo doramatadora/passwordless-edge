@@ -1,0 +1,3 @@
+[submodule "openssl-wasm32-wasi"]
+	path = openssl-wasm32-wasi
+	url = https://github.com/doramatadora/openssl-wasm32-wasi
