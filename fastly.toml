@@ -1,0 +1,42 @@
+# This file describes a Fastly Compute@Edge package. To learn more visit:
+# https://developer.fastly.com/reference/fastly-toml/
+
+authors = ["dmilitaru@fastly.com"]
+description = "Passkey implementation for Fastly Compute@Edge (WebAuthn, Rust)"
+language = "rust"
+manifest_version = 2
+name = "passwordless-edge"
+
+# The [local_server] section of this file specifies how `fastly compute serve` should simulate the Fastly platform to enable you to test this Compute@Edge application on your local machine.
+
+[local_server]
+
+# Make some local KV stores available to the development server.
+[local_server.kv_stores]
+
+[[local_server.kv_stores.credentials]]
+data = "[]"
+key = "test"
+
+[[local_server.kv_stores.challenges]]
+data = "[]"
+key = "test"
+
+[[local_server.kv_stores.userdata]]
+data = "[]"
+key = "test"
+
+# The [setup] section of this file specifies how `fastly compute deploy` should configure your Compute@Edge application on the Fastly platform.
+[setup]
+
+# Create KV stores and link them with the Compute@Edge service deployment.
+[setup.kv_stores]
+
+[setup.kv_stores.credentials]
+
+[setup.kv_stores.challenges]
+
+[setup.kv_stores.userdata]
+
+[scripts]
+build = "cargo build --bin compute-rust-passkey --release --target wasm32-wasi --color always"
