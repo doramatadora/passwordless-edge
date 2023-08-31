@@ -35,11 +35,10 @@ This repository includes OpenSSL precompiled for `wasm32-wasi` as a submodule. I
 git submodule update --init --recursive --depth=1
 ```
 
-Point `openssl-sys` (the Rust system crate that handles the OpenSSL bindings) to the precompiled OpenSSL for wasm32-wasi library root, and make sure to link OpenSSL statically:
+Source `load-openssl.sh`. This exports two environment variables that configure how `openssl-sys` (the Rust system crate that handles the OpenSSL bindings) is built. The purpose of this script is to use the precompiled OpenSSL for wasm32-wasi library root, over your system's OpenSSL, and tp make sure OpenSSL is then statically linked:
 
 ```term
-export OPENSSL_DIR=$(pwd)/openssl-wasm32-wasi/precompiled/ 
-export OPENSSL_STATIC=1 
+source ./load-openssl.sh
 ```
 
 ### 2. Run!
