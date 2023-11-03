@@ -1,6 +1,6 @@
 # Passwordless authentication at the network's edge
 
-This is a proof-of-concept implementation of passwordless authentication at the network's edge, using [Passkeys](#what-are-passkeys) & Fastly [Compute@Edge](https://www.fastly.com/products/edge-compute).
+This is a proof-of-concept implementation of passwordless authentication at the network's edge, using [Passkeys](#what-are-passkeys) & Fastly [Compute](https://www.fastly.com/products/edge-compute).
 
 It uses [KV Store](https://www.fastly.com/blog/introducing-object-store-enabling-powerful-applications-at-the-edge) (a [CRDT-based edge state](https://www.infoq.com/presentations/architecture-global-scale/) system) to store user data, credentials and challenges.
 
@@ -21,7 +21,7 @@ Imagine building a high scale, globally distributed [FIDO2 authentication soluti
 
 ## Try it yourself
 
-> If you haven't got a Fastly account, get one [for free](https://www.fastly.com/signup/), and head on over to [developer.fastly.com](https://developer.fastly.com/learning/compute) for instructions on getting started with Compute@Edge. 
+> If you haven't got a Fastly account, get one [for free](https://www.fastly.com/signup/), and head on over to [developer.fastly.com](https://developer.fastly.com/learning/compute) for instructions on getting started with Compute. 
 >
 > You'll need to install the [Fastly CLI](https://developer.fastly.com/learning/compute#install-the-fastly-cli) and [Rust language tooling](https://developer.fastly.com/learning/compute#install-language-tooling).
 
